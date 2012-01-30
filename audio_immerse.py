@@ -1,6 +1,28 @@
 #! /usr/bin/python
 
 """
+audio_immerse.py
+by jon rodriguez
+    jonrodriguez.org
+    github.com/jonmrodriguez
+
+Poor man's surround sound, using the webcam!
+Mac OS X only right now.
+
+Tracks the x coordinate of the user's shirt,
+and in real-time uses that to set the left-right audio balance.
+
+Dependency:
+    "SimpleCV"
+    simplecv.org
+    sudo pip install SimpleCV
+
+Usage:
+    ./audio_immerse.py
+    Calibrates the shirt color to be the color of the pixel that is
+    horizontally centered and vertically 3/4 of the way down.
+    If not working, just run again; the calibration got unlucky.
+    If you want less sensitivity, reduce the constant MOAR.
     
 """
 
