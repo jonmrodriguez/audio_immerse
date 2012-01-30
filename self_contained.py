@@ -18,7 +18,7 @@ MOAR = 4. # multiplier on the user's x displacement from center
 CAMERA_ID = 0 # replace with the camera id of your webcam
 DELAY_SECONDS = 0.
 X_CAM_LEFT = 1.
-X_CAM_RIGHT = -1.
+X_CAM_RIGHT = 0.
 
 # Sampling resolution
 SAMPLING_Y_STEP = 8 # pixels
@@ -108,10 +108,17 @@ while True:
         if percent_rightward > 1.:
             percent_rightward = 1.
         
-        # rescale into units where -1. is far left (from user's POV) and 1. is far right
+        # rescale into units where 0. is far left (from user's POV) and 1. is far right
         user_x = X_CAM_LEFT + percent_rightward * (X_CAM_RIGHT - X_CAM_LEFT)
         
         balance = user_x
+
+        ###
+        ### Here there be dragons.
+        ###
+        ### The below code dynamically creates an AppleScript file
+        ### to set the audio balance, then runs it.
+        ###
 
         #
         ### like doing #define BALANCE (balance)
