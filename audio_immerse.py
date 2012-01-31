@@ -96,6 +96,12 @@ while True:
 
         (width, height) = image.size()
 
+        # compute the average x coord
+        # of sampled pixels whose RGB is within COLOR_TOLERANCE
+        # of the shirt color
+        #
+        # the x will = vote_sum / n_votes
+
         vote_sum = width / 2.
         n_votes = 1
 
